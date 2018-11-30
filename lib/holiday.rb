@@ -48,7 +48,7 @@ end
 
 def all_winter_holiday_supplies(holiday_hash)
   # return an array of all of the supplies that are used in the winter season
-
+holiday_hash[:winter].values
 end
 
 def all_supplies_in_holidays(holiday_hash)
@@ -59,11 +59,17 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+holiday_hash.each do |season,holiday|
+  puts "#{holiday}"
+holiday.each do |attribute, value|
+  puts "#{value}"
 end
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
-
+  holiday_hash.each do |season, holiday|
+    holiday.each do |attribute, value|
+      if value == "BBQ"
+        puts "#{attribute}"
 end
